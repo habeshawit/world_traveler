@@ -1,10 +1,5 @@
 class WorldTraveler::Display
 
-    # def self.loading
-    #     puts "                                     Loading            "
-    #     puts "                          This may gonna take a few seconds... "
-    # end
-
     def self.welcome_message
         puts "
         db   d8b   db d88888b db       .o88b.  .d88b.  .88b  d88. d88888b   d888888b  .d88b.    db   d8b   db  .d88b.  d8888b. db      d8888b. 

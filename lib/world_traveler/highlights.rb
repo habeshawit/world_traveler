@@ -7,7 +7,6 @@ class WorldTraveler::Highlights
       @continent = continent
       @link = link
       @info = []
-    #   # notify month about the event
       add_to_continent
       save
     end 

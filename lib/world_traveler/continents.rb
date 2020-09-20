@@ -17,7 +17,6 @@ class WorldTraveler::Continents
     
     def get_highlights
         WorldTraveler::Scraper.scrape_highlights(self) if @highlights.empty?
-    #   binding.pry
     end
     
   end 
