@@ -19,8 +19,8 @@ class WorldTraveler::Display
                                                                                                               
         ".yellow.bold
 
-        puts "                                                                          Let's Travel!                         
-                                            oO0OoO0OoO0OooO0OoO0OoO0OooO0OoO0OoO0OooO0OoO0OoO0OooO0OoO0OoO0OooO0OoO0OoO0Oo".green.bold
+        puts "                                                                        Let's Travel!                         
+                              oO0OoO0OoO0OooO0OoO0OoO0OoO0OooO0OoO0OoO0OooO0OoO0OoO0OooO0OoO0OoO0OooO0OoO0OoO0OooO0OoO0OoO0Oo".green.bold
  
     end
 
@@ -54,11 +54,9 @@ class WorldTraveler::Display
                                                                         ---------'  .-.  '---------
                                                         _________________________'  '-'  '_________________________
                                                             ''''''-|---|--/    \==][^',_m_,'^][==/    \--|---|-''''''
-                                                                        \    /  ||/   H   \||  \    /
+                                                                       \    /  ||/   H   \||  \    /
                                                                         '--'   OO   O|O   OO   '--'
-                                                                            
-
-                                            ".yellow
+                                                                            ".yellow
     end
 
  
