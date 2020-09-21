@@ -27,8 +27,8 @@ class WorldTraveler::Scraper
     def self.scrape_info(highlight)
       doc = Nokogiri::HTML(open(highlight.link))
   
-      more_detail1 = doc.css("div.jsx-3600140326 p/text()[1]")["#{highlight.index}".to_i]
-      more_detail2 = doc.css("div.jsx-3600140326 p/text()[2]")["#{highlight.index}".to_i]
+      more_detail1 = doc.css("div.jsx-3600140326 p/text()[1]")[0]
+      more_detail2 = doc.css("div.jsx-3600140326 p/text()[2]")[0]
       if  more_detail1 != nil
         highlight.info << "#{more_detail1.text.strip} #{highlight.name} #{more_detail2.text.strip}"
       else

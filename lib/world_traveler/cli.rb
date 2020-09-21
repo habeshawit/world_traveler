@@ -42,7 +42,7 @@ class WorldTraveler::CLI
         if chosen_continent.between?(1,@continent.size)
             cont = @continent[chosen_continent - 1]
             cont.get_highlights
-            puts "Here are highlights for #{cont.name}".light_blue.bold
+            puts "Here are highlights in #{cont.name}".light_blue.bold
             cont.highlights.each.with_index(1) do |high, idx|
                 puts "#{idx}. #{high.name}"
             end
@@ -57,7 +57,6 @@ class WorldTraveler::CLI
       input = (gets.strip.to_i)-1
       if input.between?(0,cont.highlights.size-1)
         highlight = cont.highlights[input]
-        highlight.index = input.to_i - 1
         highlight.get_highlight_details
         show_highlight_details(highlight)
       else
