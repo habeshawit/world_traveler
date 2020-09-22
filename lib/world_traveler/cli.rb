@@ -3,7 +3,7 @@ class WorldTraveler::CLI
     def call
       system("clear")
       WorldTraveler::Display.welcome_message
-      sleep(4)
+      sleep(2)
 
       @input = ""
        
@@ -21,15 +21,15 @@ class WorldTraveler::CLI
     end
     
     def list_continents
-        system("clear")
+        # system("clear")
         WorldTraveler::Display.continent_list
       
       @continent.each.with_index(1) do |continent, index| 
-        puts "#{index}. #{continent.name}".center(135).rjust(10)
-        puts "-----------------------------------------".green.center(150)
+        puts "#{index}. #{continent.name}".center(150).rjust(10)
+        puts "-----------------------------------------".green.center(165)
       end
       puts ""
-      puts "Where would you like to go? (Choose 1-#{@continent.size})".center(135).green.bold
+      puts "Where would you like to go? (Choose 1-#{@continent.size})".center(152).green.bold
     end
     
     def get_user_choice
@@ -61,19 +61,20 @@ class WorldTraveler::CLI
         show_highlight_details(highlight)
       else
         puts "Not sure what you mean. You must enter a number between 1 - #{cont.highlights.size}."
+        get_user_highlight(cont)
       end
     end
     
     def show_highlight_details(highlight)
       puts "---------------------------------#{highlight.name}---------------------------------".center(155).yellow.bold
       highlight.info.each {|i| puts "#{i}\n"}
-      puts ""
       puts "-----------------------------------------------------------------------------------".center(155).yellow.bold
     end 
     
     def next_action
       puts "\nType 'exit' to exit or any key to return to main menu.".green.bold
       @input = gets.strip
+      system("clear")
     end 
     
     def goodbye
