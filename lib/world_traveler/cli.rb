@@ -66,9 +66,9 @@ class WorldTraveler::CLI
     end
     
     def show_highlight_details(highlight)
-      puts "---------------------------------#{highlight.name}---------------------------------".center(155).yellow.bold
-      highlight.info.each {|i| puts "#{i}\n"}
-      puts "-----------------------------------------------------------------------------------".center(155).yellow.bold
+      puts "#{highlight.name}".center(170,"-").bold
+      highlight.info.each {|i| puts "\n#{i}\n"}
+      puts "-".center(170, "-").bold
     end 
     
     def next_action

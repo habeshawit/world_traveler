@@ -27,7 +27,7 @@ class WorldTraveler::Display
     def self.goodbye
         puts "
 
-                                                                     Thanks for using World Traveler!
+                                                                      Thanks for using World Traveler!
 
                            
                                                         ▄▄▄▄·        ▐ ▄      ▌ ▐·       ▄· ▄▌ ▄▄▄·  ▄▄ • ▄▄▄ .▄▄ 
