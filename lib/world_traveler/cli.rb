@@ -54,10 +54,10 @@ class WorldTraveler::CLI
     
     def get_user_highlight(cont)
       puts "\nChoose a highlight in #{cont.name} to see more details.".light_blue.bold
-      input = (gets.strip.to_i)-1
-      if input.between?(0,cont.highlights.size-1)
-        highlight = cont.highlights[input]
-        highlight.index = input.to_i
+      input = (gets.strip.to_i)
+      if input.between?(1,cont.highlights.size)
+        highlight = cont.highlights[input-1]
+        highlight.index = input.to_i-1
         highlight.get_highlight_details
         show_highlight_details(highlight)
       else
