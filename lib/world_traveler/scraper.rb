@@ -18,23 +18,24 @@ class WorldTraveler::Scraper
         highlight = doc.css("ol.jsx-742652205 li.jsx-742652205")
         highlight.each do |h|
           title = h.css("/a/span/span[2]/text()").text.strip
-          link = "https://www.lonelyplanet.com/" + h.search("a").attribute("href").value
+          link = "https://www.lonelyplanet.com/" + h.css("a").attribute("href").value
           WorldTraveler::Highlights.new(title, continent, link)
         end 
     end
   
 
     def self.scrape_info(highlight)
-      doc = Nokogiri::HTML(open(highlight.link))
-  
-      more_detail1 = doc.css("div.jsx-3600140326 p/text()[1]")[highlight.index]
-      more_detail2 = doc.css("div.jsx-3600140326 p/text()[2]")[highlight.index]
-      if  more_detail1 != nil
-        highlight.info << "#{more_detail1.text.strip} #{highlight.name} #{more_detail2.text.strip}"
-      else
-        more = doc.css("div.jsx-2897242284 p")
-        more.each {|a| highlight.info << "#{a.text} \n"}
+      doc = Nokogiri::HTML(open(highlight.link))     #if highlight has own page
+      more = doc.css("div.jsx-2897242284 p")
+      more.each {|a| highlight.info << "#{a.text} \n"}
+
+      if highlight.info.empty?     #if highlight on the same page as other highlights
+        url = "https://www.lonelyplanet.com" +doc.css("div.jsx-3600140326 p a")[highlight.continent.highlights.index(highlight)].attribute("href").value
+        detail = Nokogiri::HTML(open(url))
+        more = detail.css("div p")[0...-2]
+        more.each{|paragraph| highlight.info << "#{paragraph.text.strip}"}
       end
+      
     end  
   
 end

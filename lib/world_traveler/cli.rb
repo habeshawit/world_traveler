@@ -57,7 +57,7 @@ class WorldTraveler::CLI
       input = (gets.strip.to_i)
       if input.between?(1,cont.highlights.size)
         highlight = cont.highlights[input-1]
-        highlight.index = input.to_i-1
+        # highlight.index = input.to_i-1
         highlight.get_highlight_details
         show_highlight_details(highlight)
       else
