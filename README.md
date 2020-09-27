@@ -7,7 +7,7 @@ Welcome to WorldTraveler gem! This Ruby gem provides a CLI to view top destinati
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'world_traveller'
+gem 'world_traveler'
 ```
 
 And then execute:
