@@ -1,5 +1,5 @@
 class WorldTraveler::Highlights
-    attr_accessor :name, :continent, :link, :info
+    attr_accessor :name, :continent, :link, :info, :index
     @@all = []
      
     def initialize(name, continent, link)
